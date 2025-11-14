@@ -1,0 +1,550 @@
+/* ---------------------------------------------------
+   GLOBAL STYLES
+--------------------------------------------------- */
+body {
+  margin: 0;
+  font-family: 'Quicksand', sans-serif;
+  background: url('Boho.jpg') center/cover fixed no-repeat;
+  color: #4b3d36;
+  line-height: 1.6;
+}
+
+/* ---------------------------------------------------
+   HEADER
+--------------------------------------------------- */
+header {
+  text-align: center;
+  background-color: rgba(214,191,167,0.9);
+  color: #3e2f24;
+  padding: 2rem 1rem 1rem;
+}
+
+.logo {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  margin: 0;
+}
+
+.swoosh {
+  width: 160px;
+  height: 6px;
+  background-color: #a7b59f;
+  border-radius: 50%;
+  margin: 0.6rem auto 0.8rem;
+  animation: swooshFade 0.6s ease-in;
+}
+
+@keyframes swooshFade {
+  from {opacity: 0; transform: scaleX(0.5);}
+  to   {opacity: 1; transform: scaleX(1);}
+}
+
+/* ---------------------------------------------------
+   NAVIGATION
+--------------------------------------------------- */
+nav.sticky {
+  position: sticky;
+  top: 0;
+  background-color: #f2e7de;
+  padding: 10px 0;
+  z-index: 10;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #5e4a3d;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 6px;
+  transition: 0.3s;
+  position: relative;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+  background-color: #d6bfa9;
+  color: #fff;
+}
+
+/* underline effect */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 2px;
+  background-color: #a7b59f;
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* Dropdown menu */
+.dropdown { position: relative; }
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f8f4ef;
+  min-width: 160px;
+  border-radius: 6px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+}
+
+.dropdown-content li a {
+  display: block;
+  padding: 8px 12px;
+  color: #4a3f35;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* ---------------------------------------------------
+   HERO / BANNERS
+--------------------------------------------------- */
+.hero-banner img,
+.page-banner.short img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.page-banner.short {
+  height: 180px;
+  overflow: hidden;
+}
+
+.page-banner.short img {
+  object-fit: cover;
+  animation: bannerFade 1.2s ease-in-out;
+}
+
+@keyframes bannerFade {
+  from {opacity: 0;}
+  to   {opacity: 1;}
+}
+
+/* Fix for small sub-banners */
+.sub-banner img {
+  width: 100%;
+  max-height: 120px;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* ---------------------------------------------------
+   MAIN CONTENT
+--------------------------------------------------- */
+main.content {
+  max-width: 750px;
+  margin: 2rem auto;
+  background-color: rgba(255,255,255,0.88);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Great Vibes', cursive;
+  color: #3e2f24;
+}
+
+.intro {
+  font-size: 1.1rem;
+  color: #5c4c44;
+  margin-bottom: 2rem;
+}
+
+/* alternating sections */
+section:nth-of-type(even),
+.product-grid:nth-of-type(even) {
+  background-color: rgba(243,231,220,0.5);
+  border-radius: 12px;
+}
+
+/* ---------------------------------------------------
+   DIVIDERS
+--------------------------------------------------- */
+.divider {
+  height: 4px;
+  background: linear-gradient(to right, #d6bfa9, #a7b59f, #d6bfa9);
+  border-radius: 4px;
+  margin: 3rem auto;
+  width: 60%;
+  opacity: 0.4;
+}
+
+/* ---------------------------------------------------
+   PRODUCT GRID + BOXES
+--------------------------------------------------- */
+.product-grid,
+.product-sections {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+/* Cards */
+.product-card,
+.product-box {
+  background-color: #f3e7dc;
+  border-radius: 10px;
+  padding-bottom: 1rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: 0.3s ease;
+}
+
+.product-card:hover,
+.product-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
+}
+
+.product-box {
+  width: 300px;
+}
+
+.product-card {
+  width: 280px;
+}
+
+.product-card .strip,
+.product-box .strip {
+  background-color: #a7b59f;
+  height: 20px;
+  width: 100%;
+}
+
+.product-card h4,
+.product-box h4 {
+  font-size: 1.4rem;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.product-card p {
+  font-size: 0.95rem;
+  color: #5c4c44;
+  padding: 0 1rem;
+  text-align: center;
+}
+
+.price {
+  font-weight: bold;
+  color: #9c7353;
+}
+
+/* ---------------------------------------------------
+   BUTTONS (global)
+--------------------------------------------------- */
+button,
+.checkout-btn,
+.add-to-cart-btn,
+.download-btn {
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+  transition: 0.3s ease;
+}
+
+/* Base Boho Button */
+button,
+.checkout-btn {
+  background-color: #a7b59f;
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+button:hover,
+.checkout-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+/* Add to Cart Button */
+.add-to-cart-btn {
+  display: block;
+  width: fit-content;
+  margin: 1.5rem auto 0;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.add-to-cart-btn:hover {
+  transform: translateY(-4px);
+  background-color: #8ea28a;
+}
+
+/* ---------------------------------------------------
+   ABOUT PAGE
+--------------------------------------------------- */
+.about-content { text-align: center; }
+
+.about-photo {
+  width: 240px;
+  height: 240px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -90px auto 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
+  transition: 0.4s ease;
+}
+
+.about-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 32%;
+}
+
+.about-photo:hover {
+  transform: scale(1.05);
+}
+
+.caption {
+  font-size: 0.95rem;
+  color: #5c4c44;
+  margin-bottom: 2rem;
+}
+
+/* ---------------------------------------------------
+   THEME TITLES / ICONS
+--------------------------------------------------- */
+.theme-title {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  text-decoration: none;
+}
+
+.theme-title span {
+  font-family: 'Great Vibes', cursive !important;
+  font-size: 1.9rem;
+  color: #5b4636;
+  letter-spacing: 0.5px;
+}
+
+.theme-icon {
+  width: 52px;
+  height: 52px;
+  object-fit: contain;
+  border-radius: 8px;
+  padding: 2px;
+  opacity: 0.95;
+  transition: 0.25s ease;
+}
+
+.theme-title:hover .theme-icon {
+  transform: scale(1.12);
+  opacity: 1;
+}
+
+/* prevent dragging or copying icons */
+.theme-icon,
+.theme-icon-large {
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ---------------------------------------------------
+   THEME PREVIEW PAGES
+--------------------------------------------------- */
+.theme-preview {
+  max-width: 700px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+}
+
+.theme-heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 15px;
+  color: #3e2f24;
+}
+
+.theme-icon-large {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+}
+
+.theme-description {
+  font-size: 1.1rem;
+  color: #6f5a4a;
+  margin-top: 20px;
+  line-height: 1.8;
+}
+
+/* Includes list */
+.includes-heading {
+  font-size: 1.5rem;
+  font-family: 'Playfair Display', serif;
+  margin-bottom: 15px;
+  color: #5b4636;
+}
+
+.includes-list {
+  list-style: none;
+  margin: 0 auto 30px;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 20px;
+  max-width: 500px;
+  text-align: left;
+  color: #6f5a4a;
+}
+
+.includes-list li {
+  background: rgba(243,231,220,0.6);
+  padding: 6px 10px;
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+
+/* ---------------------------------------------------
+   FREEBIES PAGE
+--------------------------------------------------- */
+.freebie-box {
+  background: #f3e7dc;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.freebie-title {
+  font-family: 'Great Vibes', cursive;
+  font-size: 2rem;
+  color: #3e2f24;
+}
+
+.freebie-description {
+  font-size: 1rem;
+  color: #5c4c44;
+  margin-bottom: 1.2rem;
+}
+
+.download-btn {
+  display: inline-block;
+  background: #a7b59f;
+  color: #fff;
+  padding: 0.9rem 2rem;
+  border-radius: 30px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+}
+
+.download-btn:hover {
+  background: #8ea28a;
+  transform: translateY(-4px);
+}
+
+/* ---------------------------------------------------
+   CART PAGE
+--------------------------------------------------- */
+.cart-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: #f3e7dc;
+  padding: 1rem;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.cart-thumb {
+  width: 70px;
+  height: 70px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.cart-info h4 { margin: 0; }
+
+.remove-btn {
+  margin-left: auto;
+  background-color: #d6bfa9;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+}
+
+#cart-count {
+  background: #a7b59f;
+  padding: 2px 8px;
+  border-radius: 10px;
+  color: white;
+  margin-left: 4px;
+}
+
+/* ---------------------------------------------------
+   CONTACT PAGE
+--------------------------------------------------- */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 0.8rem;
+  border: 1px solid #d6bfa9;
+  border-radius: 6px;
+  font-family: inherit;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: 2px solid #a7b59f;
+}
+
+/* ---------------------------------------------------
+   FOOTER
+--------------------------------------------------- */
+footer {
+  background-color: rgba(214,191,167,0.9);
+  padding: 1rem;
+  text-align: center;
+  color: #3e2f24;
+  font-size: 0.9rem;
+}
+
+/* ---------------------------------------------------
+   RESPONSIVE
+--------------------------------------------------- */
+@media (max-width: 768px) {
+  main.content { margin: 1rem; padding: 1.5rem; }
+  .product-card, .product-box { width: 100%; }
+  .logo { font-size: 2.4rem; }
+  .about-photo { width: 160px; height: 160px; margin-top: -60px; }
+  .includes-list { grid-template-columns: 1fr; }
+}

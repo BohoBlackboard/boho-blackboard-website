@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Classroom Themes | Boho Blackboard</title>
+
+  <link rel="icon" type="image/png" href="bb favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="cart.js" defer></script>
+</head>
+<body>
+
+<header>
+  <h1 class="logo">Boho Blackboard</h1>
+  <div class="swoosh"></div>
+
+  <!-- Mobile Menu -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+
+  <nav class="sticky">
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+
+      <li class="dropdown">
+        <a href="resources.html" class="active">Resources ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="pdf-products.html">PDF Products</a></li>
+          <li><a href="classroom-themes.html" class="active">Classroom Themes</a></li>
+          <li><a href="freebies.html">Freebies</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Legal ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="downloads.html">Digital Delivery</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="sub-banner">
+  <img src="banner.png" alt="Classroom Themes Banner">
+</section>
+
+<main class="content">
+  <h2>Classroom Themes</h2>
+  <p class="intro">
+    Turn your classroom into a calm, creative learning space with our coordinated boho themes.
+  </p>
+
+  <div class="divider"></div>
+
+  <div class="product-grid">
+
+    <!-- DACHSHUNDS -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-dachshunds.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Dachshunds</span>
+          <img src="Doxie.png" class="theme-icon" alt="Dachshund Icon">
+        </h4>
+      </a>
+      <p>A playful theme filled with wiggly sausage dogs & soft boho tones.</p>
+    </div>
+
+    <!-- BUNNIES -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-bunnies.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Bunnies</span>
+          <img src="Bunny.png" class="theme-icon" alt="Bunny Icon">
+        </h4>
+      </a>
+      <p>A gentle, calming theme with soft, fluffy bunnies & warm neutrals.</p>
+    </div>
+
+    <!-- OWLS -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-owls.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Owls</span>
+          <img src="Owl.png" class="theme-icon" alt="Owl Icon">
+        </h4>
+      </a>
+      <p>A wise & whimsical theme featuring friendly boho owls.</p>
+    </div>
+
+    <!-- BEARS -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-bears.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Bears</span>
+          <img src="Bear.png" class="theme-icon" alt="Bear Icon">
+        </h4>
+      </a>
+      <p>A warm theme with soft cuddly bears in muted boho colours.</p>
+    </div>
+
+    <!-- RINGNECKS -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-ringnecks.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Ringnecks</span>
+          <img src="Ringneck.png" class="theme-icon" alt="Ringneck Icon">
+        </h4>
+      </a>
+      <p>A bright, cheerful theme inspired by colourful ringneck parrots.</p>
+    </div>
+
+    <!-- SQUIRRELS -->
+    <div class="product-card">
+      <div class="strip"></div>
+      <a href="boho-squirrels.html" class="theme-link">
+        <h4 class="theme-title">
+          <span>Boho-Squirrels</span>
+          <img src="Squirrel.png" class="theme-icon" alt="Squirrel Icon">
+        </h4>
+      </a>
+      <p>A playful woodland theme full of curious little squirrels.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer>
+  © 2025 Boho Blackboard | Designed with heart by Danielle Droste  
+  <br>
+  <a href="terms.html">Terms</a> •
+  <a href="privacy.html">Privacy</a> •
+  <a href="refund.html">Refund Policy</a> •
+  <a href="downloads.html">Digital Delivery</a>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

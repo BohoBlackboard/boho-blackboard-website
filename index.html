@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Boho Blackboard | Home</title>
+
+  <link rel="icon" type="image/png" href="bb favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">Boho Blackboard</h1>
+  <div class="swoosh"></div>
+
+  <!-- MOBILE MENU BUTTON -->
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+
+  <nav class="sticky">
+    <ul class="nav-links">
+
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="about.html">About</a></li>
+
+      <li class="dropdown">
+        <a href="resources.html">Resources ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="pdf-products.html">PDF Products</a></li>
+          <li><a href="classroom-themes.html">Classroom Themes</a></li>
+          <li><a href="freebies.html">Freebies</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Legal ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="downloads.html">Digital Delivery</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="hero-banner">
+  <img src="banner.png" alt="Boho Blackboard Banner">
+</section>
+
+<main class="content">
+
+  <h2>Welcome to Boho Blackboard</h2>
+
+  <p class="intro">
+    Beautiful, coordinated boho classroom themes and printable resources designed with love.
+    Bring warmth, creativity and calm into your teaching space.
+  </p>
+
+  <div class="divider"></div>
+
+  <h3>Explore Resources</h3>
+
+  <div class="product-sections">
+    <div class="product-box">
+      <div class="strip"></div>
+      <h4>PDF Products</h4>
+      <p>Printable worksheets, posters, charts & tools to bring learning to life.</p>
+      <a href="pdf-products.html"><button>View Products</button></a>
+    </div>
+
+    <div class="product-box">
+      <div class="strip"></div>
+      <h4>Classroom Themes</h4>
+      <p>Boho-inspired full classroom packs with matching designs and décor.</p>
+      <a href="classroom-themes.html"><button>View Themes</button></a>
+    </div>
+
+    <div class="product-box">
+      <div class="strip"></div>
+      <h4>Freebies</h4>
+      <p>Free downloads including fonts, posters and small décor items!</p>
+      <a href="freebies.html"><button>See Freebies</button></a>
+    </div>
+  </div>
+
+</main>
+
+<footer>
+  © 2025 Boho Blackboard | Designed with heart by Danielle Droste  
+  <br>
+  <a href="terms.html">Terms</a> •
+  <a href="privacy.html">Privacy</a> •
+  <a href="refund.html">Refund Policy</a> •
+  <a href="downloads.html">Digital Delivery</a>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

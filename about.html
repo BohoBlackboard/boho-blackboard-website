@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | Boho Blackboard</title>
+
+  <link rel="icon" type="image/png" href="bb favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">Boho Blackboard</h1>
+  <div class="swoosh"></div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+
+  <nav class="sticky">
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+
+      <li class="dropdown">
+        <a href="resources.html">Resources ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="pdf-products.html">PDF Products</a></li>
+          <li><a href="classroom-themes.html">Classroom Themes</a></li>
+          <li><a href="freebies.html">Freebies</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Legal ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="downloads.html">Digital Delivery</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="sub-banner">
+  <img src="banner.png" alt="Boho Banner">
+</section>
+
+<main class="content about-content">
+
+  <div class="about-photo">
+    <img src="about me.jpg" alt="Danielle">
+  </div>
+
+  <h2>About Me</h2>
+
+  <p class="intro">
+    Hi! I'm Danielle — a 27-year-old teacher who loves creating warm, beautiful learning spaces.
+    Designing my own classroom décor became one of the greatest joys of my teaching journey,
+    and now I get to share it with others who love the same boho-inspired calm and creativity.
+  </p>
+
+  <p>
+    Boho Blackboard was born out of a simple wish:  
+    *to help teachers feel proud, inspired and excited every time they walk into their classroom.*  
+    Whether you're decorating a brand-new room or refreshing your space,
+    I hope my themes and printables bring you joy and make your classroom feel like home.
+  </p>
+
+</main>
+
+<footer>
+  © 2025 Boho Blackboard | Designed with heart by Danielle Droste  
+  <br>
+  <a href="terms.html">Terms</a> •
+  <a href="privacy.html">Privacy</a> •
+  <a href="refund.html">Refund Policy</a> •
+  <a href="downloads.html">Digital Delivery</a>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>

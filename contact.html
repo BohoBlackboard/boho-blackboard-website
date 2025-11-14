@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Boho Blackboard</title>
+
+  <link rel="icon" type="image/png" href="bb favicon.png">
+  <link rel="stylesheet" href="style.css">
+
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
+
+  <script src="cart.js" defer></script>
+</head>
+
+<body>
+
+<header>
+  <h1 class="logo">Boho Blackboard</h1>
+  <div class="swoosh"></div>
+
+  <div class="hamburger" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+
+  <nav class="sticky">
+    <ul class="nav-links">
+
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+
+      <li class="dropdown">
+        <a href="resources.html">Resources ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="pdf-products.html">PDF Products</a></li>
+          <li><a href="classroom-themes.html">Classroom Themes</a></li>
+          <li><a href="freebies.html">Freebies</a></li>
+        </ul>
+      </li>
+
+      <li class="dropdown">
+        <a href="#">Legal ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="terms.html">Terms</a></li>
+          <li><a href="privacy.html">Privacy</a></li>
+          <li><a href="refund.html">Refund Policy</a></li>
+          <li><a href="downloads.html">Digital Delivery</a></li>
+        </ul>
+      </li>
+
+      <li><a href="contact.html" class="active">Contact</a></li>
+      <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
+
+    </ul>
+  </nav>
+</header>
+
+<section class="sub-banner">
+  <img src="banner.png" alt="Boho Blackboard Banner">
+</section>
+
+<main class="content">
+
+  <h2>Contact Me</h2>
+
+  <p class="intro">Have a question? Need help? I'd love to hear from you.</p>
+
+  <form action="mailto:your-email@example.com" method="POST" enctype="text/plain" class="contact-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message</button>
+  </form>
+
+</main>
+
+<footer>
+  © 2025 Boho Blackboard | Designed with heart by Danielle Droste  
+  <br>
+  <a href="terms.html">Terms</a> •
+  <a href="privacy.html">Privacy</a> •
+  <a href="refund.html">Refund Policy</a> •
+  <a href="downloads.html">Digital Delivery</a>
+</footer>
+
+<script>
+function toggleMenu() {
+  document.querySelector(".nav-links").classList.toggle("open");
+}
+</script>
+
+</body>
+</html>
