@@ -8,8 +8,6 @@
   <link rel="icon" type="image/png" href="bb favicon.png">
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-
-  <script src="cart.js" defer></script>
 </head>
 
 <body>
@@ -59,10 +57,13 @@
   <h2>Your Cart</h2>
   <p class="intro">Review your items before checking out.</p>
 
+  <!-- 🔥 CART ITEMS WILL BE INSERTED HERE -->
   <div id="cart-items"></div>
 
+  <!-- 🔥 TOTAL PRICE -->
   <h3 style="text-align:center;">Total: <span id="cart-total">R0</span></h3>
 
+  <!-- 🔥 CHECKOUT BUTTON -->
   <button class="checkout-btn" onclick="proceedToCheckout()">
     Pay Now
   </button>
@@ -76,15 +77,25 @@
   <a href="downloads.html">Digital Delivery</a>
 </footer>
 
+<!-- ========== JAVASCRIPT ========== -->
+
 <script>
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("open");
 }
 
-// Redirect to PayFast (placeholder until your account is verified)
+// Placeholder until PayFast is fully active
 function proceedToCheckout() {
   alert("Checkout coming soon! Once your PayFast account is verified, this button will take your customer to the payment page.");
 }
+</script>
+
+<!-- Load the cart system -->
+<script src="cart.js" defer></script>
+
+<!-- Build the cart items after page loads -->
+<script>
+  document.addEventListener("DOMContentLoaded", updateCartPage);
 </script>
 
 </body>
