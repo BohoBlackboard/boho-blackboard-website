@@ -11,7 +11,7 @@ function saveCart(cart) {
 // Add item
 function addToCart(name, price, image = "") {
   const cart = getCart();
-  cart.push({ name, price, image });
+  cart.push({ name, price: Number(price), image });
   saveCart(cart);
   updateCartCount();
   alert(`${name} added to cart!`);
@@ -46,7 +46,7 @@ function updateCartPage() {
   let total = 0;
 
   cart.forEach((item, index) => {
-    total += item.price;
+    total += Number(item.price);
 
     const card = document.createElement("div");
     card.classList.add("cart-item");
@@ -64,6 +64,19 @@ function updateCartPage() {
 
   totalEl.textContent = "R" + total;
 }
+
+// Listen for Add-to-Cart button clicks
+document.addEventListener("click", function (event) {
+  if (event.target.classList.contains("add-to-cart")) {
+    event.preventDefault();
+
+    const name = event.target.dataset.product;
+    const price = event.target.dataset.price;
+    const image = event.target.dataset.image || ""; // optional
+
+    addToCart(name, price, image);
+  }
+});
 
 // Run counter updater on load
 document.addEventListener("DOMContentLoaded", updateCartCount);
