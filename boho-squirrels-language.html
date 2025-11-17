@@ -1,16 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freebies | Boho Blackboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Select Language – Boho Squirrels</title>
 
   <link rel="icon" type="image/png" href="bb favicon.png">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-
-  <script src="cart.js" defer></script>
 </head>
 
 <body>
@@ -19,13 +16,8 @@
   <h1 class="logo">Boho Blackboard</h1>
   <div class="swoosh"></div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </div>
-
   <nav class="sticky">
     <ul class="nav-links">
-
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
 
@@ -33,7 +25,7 @@
         <a href="resources.html" class="active">Resources ▾</a>
         <ul class="dropdown-content">
           <li><a href="pdf-products.html">PDF Products</a></li>
-          <li><a href="classroom-themes.html">Classroom Themes</a></li>
+          <li><a href="classroom-themes.html" class="active">Classroom Themes</a></li>
           <li><a href="freebies.html">Freebies</a></li>
         </ul>
       </li>
@@ -50,33 +42,37 @@
 
       <li><a href="contact.html">Contact</a></li>
       <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-
     </ul>
   </nav>
 </header>
 
 <section class="sub-banner">
-  <img src="banner.png" alt="Freebies Banner">
+  <img src="banner.png" alt="Boho Squirrels Banner">
 </section>
 
-<main class="content">
+<main class="content theme-preview">
 
-  <h2>Freebies</h2>
-
-  <p class="intro">
-    Enjoy these free classroom resources — created with love for teachers everywhere.
+  <h2 class="theme-heading">
+    <img src="Squirrel.png" class="theme-icon-large" alt="Squirrel Icon">
+    Boho Squirrels
+  </h2>
+  
+  <p class="theme-description">
+    A lively woodland theme filled with curious little squirrels and soft earthy tones.
+    Adds playfulness, imagination, and adventure to your classroom space.
   </p>
 
-  <div class="divider"></div>
+</main>
 
-  <div class="freebie-box">
-    <h3 class="freebie-title">Boho Blackboard Font Pack</h3>
-    <p class="freebie-description">
-      A set of beautiful fonts you can use in your classroom designs.
-    </p>
-    <a href="FONTS.zip" download class="download-btn">Download Fonts</a>
+<main class="content">
+  <div class="language-wrapper">
+    <h1>Select Your Language</h1>
+
+    <div class="lang-buttons">
+      <a class="lang-btn" href="boho-squirrels-english.html">English</a>
+      <a class="lang-btn" href="boho-squirrels-afrikaans.html">Afrikaans</a>
+    </div>
   </div>
-
 </main>
 
 <footer>
@@ -88,11 +84,7 @@
   <a href="downloads.html">Digital Delivery</a>
 </footer>
 
-<script>
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("open");
-}
-</script>
+<script src="cart.js"></script>
 
 </body>
 </html>

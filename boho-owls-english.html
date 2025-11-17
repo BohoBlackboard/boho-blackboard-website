@@ -1,15 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Freebies | Boho Blackboard</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Boho Owls – English</title>
 
   <link rel="icon" type="image/png" href="bb favicon.png">
-  <link rel="stylesheet" href="style.css">
-
+  <link rel="stylesheet" href="style.css" />
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Quicksand:wght@400;500&display=swap" rel="stylesheet">
-
   <script src="cart.js" defer></script>
 </head>
 
@@ -19,13 +17,8 @@
   <h1 class="logo">Boho Blackboard</h1>
   <div class="swoosh"></div>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </div>
-
   <nav class="sticky">
     <ul class="nav-links">
-
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
 
@@ -33,7 +26,7 @@
         <a href="resources.html" class="active">Resources ▾</a>
         <ul class="dropdown-content">
           <li><a href="pdf-products.html">PDF Products</a></li>
-          <li><a href="classroom-themes.html">Classroom Themes</a></li>
+          <li><a href="classroom-themes.html" class="active">Classroom Themes</a></li>
           <li><a href="freebies.html">Freebies</a></li>
         </ul>
       </li>
@@ -50,49 +43,60 @@
 
       <li><a href="contact.html">Contact</a></li>
       <li><a href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
-
     </ul>
   </nav>
 </header>
 
 <section class="sub-banner">
-  <img src="banner.png" alt="Freebies Banner">
+  <img src="banner.png" alt="Boho Owls Banner">
 </section>
+
+<main class="content theme-preview">
+
+  <h2 class="theme-heading">
+    <img src="Owl.png" class="theme-icon-large" alt="Owl Icon">
+    Boho Owls
+  </h2>
+
+  <p class="theme-description">
+    A wise and whimsical theme featuring friendly boho owls.
+    Creates a magical and inspiring classroom atmosphere full of curiosity and creativity.
+  </p>
+
+</main>
 
 <main class="content">
 
-  <h2>Freebies</h2>
+  <h2 class="includes-heading">What's inside the pack?</h2>
 
-  <p class="intro">
-    Enjoy these free classroom resources — created with love for teachers everywhere.
-  </p>
+  <ul class="includes-list">
+    <li>Welcome Door Poster</li>
+    <li>Months of the Year</li>
+    <li>Days of the Week</li>
+    <li>100 Chart</li>
+    <li>Weather Chart</li>
+    <li>Alphabet Posters</li>
+    <li>Welcome Flags</li>
+    <li>Shapes</li>
+    <li>Colours</li>
+    <li>Editable Nametags</li>
+    <li>Birthday Posters</li>
+    <li>Number Flags</li>
+    <li>Alphabet Flags</li>
+  </ul>
 
-  <div class="divider"></div>
+  <p class="price">R100</p>
 
-  <div class="freebie-box">
-    <h3 class="freebie-title">Boho Blackboard Font Pack</h3>
-    <p class="freebie-description">
-      A set of beautiful fonts you can use in your classroom designs.
-    </p>
-    <a href="FONTS.zip" download class="download-btn">Download Fonts</a>
-  </div>
+  <button class="add-to-cart-btn"
+          onclick="addToCart('Boho Owls Theme (English)', 100, 'Owl.png')">
+    Add to Cart — R100
+  </button>
 
 </main>
 
 <footer>
-  © 2025 Boho Blackboard | Designed from the heart by Danielle Droste  
-  <br>
-  <a href="terms.html">Terms</a> •
-  <a href="privacy.html">Privacy</a> •
-  <a href="refund.html">Refund Policy</a> •
-  <a href="downloads.html">Digital Delivery</a>
+  © 2025 Boho Blackboard | Designed from the heart by Danielle Droste
 </footer>
-
-<script>
-function toggleMenu() {
-  document.querySelector(".nav-links").classList.toggle("open");
-}
-</script>
 
 </body>
 </html>
