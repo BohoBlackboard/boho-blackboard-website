@@ -80,3 +80,31 @@ document.addEventListener("click", function (event) {
 
 // Run counter updater on load
 document.addEventListener("DOMContentLoaded", updateCartCount);
+// ---------- PAYFAST INTEGRATION ----------
+function updatePayFastFields() {
+  const cart = getCart();
+
+  // Build product list (PayFast only accepts 100 chars)
+  let itemNames = cart.map(item => item.name).join(", ");
+  if (itemNames.length > 100) {
+    itemNames = itemNames.substring(0, 97) + "...";
+  }
+
+  // Calculate total
+  const total = cart.reduce((sum, item) => sum + Number(item.price), 0);
+
+  // Assign values to hidden PayFast fields
+  const amountField = document.getElementById("pf-amount");
+  const itemField = document.getElementById("pf-item-name");
+
+  if (amountField) amountField.value = total.toFixed(2);
+  if (itemField) itemField.value = itemNames;
+}
+
+// Re-run PayFast field sync when cart updates
+document.addEventListener("DOMContentLoaded", () => {
+  updateCartPage();
+  updateCartCount();
+  updatePayFastFields();
+});
+

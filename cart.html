@@ -62,9 +62,27 @@
 
   <h3 style="text-align:center;">Total: <span id="cart-total">R0</span></h3>
 
-  <button class="checkout-btn" onclick="proceedToCheckout()">
-    Pay Now
-  </button>
+  <!-- ========== PAYFAST CHECKOUT FORM ========== -->
+  <form id="payfast-form" action="https://www.payfast.co.za/eng/process" method="post" style="text-align:center; margin-top:20px;">
+
+    <!-- REQUIRED FIELDS -->
+    <input type="hidden" name="merchant_id" value="32490751">
+    <input type="hidden" name="merchant_key" value="f4fwd1jmilk9g">
+
+    <!-- CORRECTED REDIRECTS TO YOUR REAL DOMAIN -->
+    <input type="hidden" name="return_url" value="https://bohoblackboard.netlify.app/success.html">
+    <input type="hidden" name="cancel_url" value="https://bohoblackboard.netlify.app/cancel.html">
+
+    <!-- DYNAMIC FIELDS FILLED BY CART.JS -->
+    <input type="hidden" id="pf-amount" name="amount" value="">
+    <input type="hidden" id="pf-item-name" name="item_name" value="">
+
+    <!-- PAY BUTTON -->
+    <button type="submit" id="payfast-button" class="checkout-btn">
+      Pay with PayFast
+    </button>
+
+  </form>
 </main>
 
 <footer>
@@ -79,10 +97,6 @@
 function toggleMenu() {
   document.querySelector(".nav-links").classList.toggle("open");
 }
-
-function proceedToCheckout() {
-  alert("Checkout coming soon! Once your PayFast account is verified, this button will take your customer to the payment page.");
-}
 </script>
 
 <!-- 🔥 LOAD CART.JS AT THE BOTTOM -->
@@ -93,6 +107,7 @@ function proceedToCheckout() {
   document.addEventListener("DOMContentLoaded", () => {
     updateCartPage();
     updateCartCount();
+    updatePayFastFields();
   });
 </script>
 
