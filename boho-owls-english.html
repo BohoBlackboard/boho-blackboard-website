@@ -53,7 +53,6 @@
 
 <!-- ---------------- Preview Section ---------------- -->
 <section class="theme-preview-section">
-
   <div class="preview-grid">
 
     <div class="preview-item">
@@ -75,9 +74,7 @@
     <div class="preview-item">
       <img src="Owls_Months.png" alt="Boho Owls Months">
     </div>
-
-  </div> <!-- preview-grid closed -->
-
+  </div>
 </section>
 
 <!-- ---------------- Theme Description ---------------- -->
@@ -122,26 +119,24 @@
           onclick="addToCart('Boho Owls Theme (English)', 100, 'Owl.png')">
     Add to Cart — R100
   </button>
-<form action="https://payment.payfast.io/eng/process" method="post" style="margin-top: 20px;">
-    <input type="hidden" name="cmd" value="_paynow">
-    <input type="hidden" name="receiver" value="32490751">
 
-    <!-- Redirects -->
-    <input type="hidden" name="return_url" value="https://bohoblackboard.github.io/boho/thankyou_owls.html">
-    <input type="hidden" name="cancel_url" value="https://bohoblackboard.github.io/boho/Cancel.html">
+  <!-- PayFast Beautiful Button -->
+  <form action="https://payment.payfast.io/eng/process" method="post" style="margin-top: 20px;">
+      <input type="hidden" name="cmd" value="_paynow">
+      <input type="hidden" name="receiver" value="32490751">
 
-    <!-- Product data -->
-    <input type="hidden" name="amount" value="100.00">
-    <input type="hidden" name="item_name" value="Boho Owls English">
-    <input type="hidden" name="item_description" value="Digital classroom theme download – Boho Owls (English)">
+      <!-- Redirects -->
+      <input type="hidden" name="return_url" value="https://bohoblackboard.github.io/boho/thankyou_owls.html">
+      <input type="hidden" name="cancel_url" value="https://bohoblackboard.github.io/boho/Cancel.html">
 
-    <!-- Pay button -->
-    <input type="image"
-           src="https://my.payfast.io/images/buttons/PayNow/Light-Large-PayNow.png"
-           alt="Pay Now"
-           title="Pay Now with PayFast"
-           style="margin-top: 10px;">
-</form>
+      <!-- Product data -->
+      <input type="hidden" name="amount" value="100">
+      <input type="hidden" name="item_name" value="Boho Owls English">
+      <input type="hidden" name="item_description" value="Digital classroom theme download – Boho Owls (English)">
+
+      <button type="submit" class="payfast-btn">Pay Now — R100</button>
+  </form>
+
 </main>
 
 <footer>

@@ -53,7 +53,6 @@
 
 <!-- ---------------- Preview Section ---------------- -->
 <section class="theme-preview-section">
-
   <div class="preview-grid">
 
     <div class="preview-item">
@@ -76,14 +75,14 @@
       <img src="Worsies_Maande.png" alt="Boho Worshonde Maande">
     </div>
 
-<div class="preview-item">
-      <img src="Worsies_Nommervlaggies.png" alt="Boho Worshonde nommervlaggies">
+    <div class="preview-item">
+      <img src="Worsies_Nommervlaggies.png" alt="Boho Worshonde Nommervlaggies">
     </div>
-  </div>
 
+  </div>
 </section>
 
-<!-- --------------- Theme Heading ---------------- -->
+<!-- --------------- Theme Header ---------------- -->
 <section class="theme-header">
 
   <h2 class="theme-heading">
@@ -121,30 +120,27 @@
 
   <p class="price">R100</p>
 
+  <!-- Add to Cart -->
   <button class="add-to-cart-btn"
           onclick="addToCart('Boho Worshonde Tema (Afrikaans)', 100, 'Doxie.png')">
     Voeg by mandjie — R100
   </button>
-<form action="https://payment.payfast.io/eng/process" method="post" style="margin-top: 20px;">
-    <input type="hidden" name="cmd" value="_paynow">
-    <input type="hidden" name="receiver" value="32490751">
 
-    <!-- Redirects -->
-    <input type="hidden" name="return_url" value="https://bohoblackboard.github.io/boho/thankyou_dachshunds_afrikaans.html">
-    <input type="hidden" name="cancel_url" value="https://bohoblackboard.github.io/boho/Cancel.html">
+  <!-- PayFast Beautiful Button -->
+  <form action="https://payment.payfast.io/eng/process" method="post" style="margin-top: 20px;">
+      <input type="hidden" name="cmd" value="_paynow">
+      <input type="hidden" name="receiver" value="32490751">
 
-    <!-- Product info -->
-    <input type="hidden" name="amount" value="100.00">
-    <input type="hidden" name="item_name" value="Boho Worshonde Afrikaans">
-    <input type="hidden" name="item_description" value="Digital classroom theme download – Boho Worshonde (Afrikaans)">
+      <input type="hidden" name="return_url" value="https://bohoblackboard.github.io/boho/thankyou_dachshunds_afrikaans.html">
+      <input type="hidden" name="cancel_url" value="https://bohoblackboard.github.io/boho/Cancel.html">
 
-    <!-- Pay button -->
-    <input type="image"
-           src="https://my.payfast.io/images/buttons/PayNow/Light-Large-PayNow.png"
-           alt="Pay Now"
-           title="Pay Now with PayFast"
-           style="margin-top: 10px;">
-</form>
+      <input type="hidden" name="amount" value="100">
+      <input type="hidden" name="item_name" value="Boho Worshonde Afrikaans">
+      <input type="hidden" name="item_description" value="Digital classroom theme download – Boho Worshonde (Afrikaans)">
+
+      <button type="submit" class="payfast-btn">Betaal Nou — R100</button>
+  </form>
+
 </main>
 
 <footer>
