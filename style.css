@@ -9,9 +9,9 @@ body {
   line-height: 1.6;
 }
 
-/* Make all headings chalk-style */
+/* ALL HEADINGS USE PATRICK HAND */
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Patrick Hand', sans-serif !important;
+  font-family: 'Patrick Hand', cursive !important;
   color: #3e2f24;
 }
 
@@ -119,7 +119,7 @@ nav.sticky {
 }
 
 /* ---------------------------------------------------
-   HERO / BANNERS
+   BANNERS
 --------------------------------------------------- */
 .hero-banner img,
 .page-banner.short img {
@@ -169,26 +169,8 @@ main.content {
   margin-bottom: 2rem;
 }
 
-section:nth-of-type(even),
-.product-grid:nth-of-type(even) {
-  background-color: rgba(243,231,220,0.5);
-  border-radius: 12px;
-}
-
 /* ---------------------------------------------------
-   DIVIDERS
---------------------------------------------------- */
-.divider {
-  height: 4px;
-  background: linear-gradient(to right, #d6bfa9, #a7b59f, #d6bfa9);
-  border-radius: 4px;
-  margin: 3rem auto;
-  width: 60%;
-  opacity: 0.4;
-}
-
-/* ---------------------------------------------------
-   PRODUCT GRID + BOXES
+   PRODUCT GRIDS
 --------------------------------------------------- */
 .product-grid,
 .product-sections {
@@ -204,7 +186,6 @@ section:nth-of-type(even),
   border-radius: 10px;
   padding-bottom: 1rem;
   box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  overflow: hidden;
   transition: 0.3s ease;
 }
 
@@ -236,38 +217,19 @@ section:nth-of-type(even),
   text-align: center;
 }
 
-.product-card p {
-  font-size: 0.95rem;
-  color: #5c4c44;
-  padding: 0 1rem;
-  text-align: center;
-}
-
-.price {
-  font-weight: bold;
-  color: #9c7353;
-}
-
 /* ---------------------------------------------------
    BUTTONS
 --------------------------------------------------- */
-button,
-.checkout-btn,
-.add-to-cart-btn,
-.download-btn {
-  cursor: pointer;
-  border: none;
-  font-family: inherit;
-  transition: 0.3s ease;
-}
-
 button,
 .checkout-btn {
   background-color: #a7b59f;
   color: white;
   padding: 0.7rem 1.4rem;
+  border: none;
   border-radius: 8px;
   font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s ease;
 }
 
 button:hover,
@@ -277,189 +239,18 @@ button:hover,
 }
 
 .add-to-cart {
-  display: block;
-  width: fit-content;
-  margin: 1.5rem auto 0;
+  background-color: #a7b59f;
   padding: 0.9rem 2rem;
   border-radius: 30px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-  background-color: #a7b59f;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 500;
-  text-align: center;
+  color: white;
+  display: block;
+  margin: 1.5rem auto 0;
   cursor: pointer;
   transition: 0.3s ease;
 }
 
 .add-to-cart:hover {
-  transform: translateY(-4px);
   background-color: #8ea28a;
-}
-
-/* ---------------------------------------------------
-   ABOUT PAGE
---------------------------------------------------- */
-.about-content { text-align: center; }
-
-.about-photo {
-  width: 240px;
-  height: 240px;
-  border-radius: 50%;
-  overflow: hidden;
-  margin: -90px auto 1rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.12);
-  transition: 0.4s ease;
-}
-
-.about-photo img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: 50% 32%;
-}
-
-.about-photo:hover { transform: scale(1.05); }
-
-.caption {
-  font-size: 0.95rem;
-  color: #5c4c44;
-  margin-bottom: 2rem;
-}
-
-/* ---------------------------------------------------
-   THEME TITLES
---------------------------------------------------- */
-.theme-title {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  text-decoration: none;
-}
-
-.theme-title span {
-  font-family: 'Patrick Hand', sans-serif !important;
-  font-size: 1.9rem;
-  color: #5b4636;
-}
-
-.theme-icon {
-  width: 52px;
-  height: 52px;
-  object-fit: contain;
-  border-radius: 8px;
-  padding: 2px;
-  opacity: 0.95;
-  transition: 0.25s ease;
-}
-
-.theme-title:hover .theme-icon {
-  transform: scale(1.12);
-  opacity: 1;
-}
-
-.theme-icon,
-.theme-icon-large {
-  pointer-events: none;
-  user-select: none;
-}
-
-/* ---------------------------------------------------
-   THEME PREVIEW
---------------------------------------------------- */
-.theme-preview {
-  max-width: 700px;
-  margin: 40px auto;
-  text-align: center;
-  padding: 20px;
-}
-
-.theme-heading {
-  font-family: 'Patrick Hand', sans-serif !important;
-  font-size: 3rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 15px;
-  color: #3e2f24;
-}
-
-.theme-icon-large {
-  width: 80px;
-  height: 80px;
-  object-fit: contain;
-}
-
-.theme-description {
-  font-size: 1.1rem;
-  color: #6f5a4a;
-  margin-top: 20px;
-  line-height: 1.8;
-}
-
-.includes-heading {
-  font-size: 1.5rem;
-  margin-bottom: 15px;
-  color: #5b4636;
-}
-
-.includes-list {
-  list-style: none;
-  margin: 0 auto 30px;
-  padding: 0;
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 8px 20px;
-  max-width: 500px;
-  text-align: left;
-  color: #6f5a4a;
-}
-
-.includes-list li {
-  background: rgba(243,231,220,0.6);
-  padding: 6px 10px;
-  border-radius: 6px;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-/* ---------------------------------------------------
-   FREEBIES
---------------------------------------------------- */
-.freebie-box {
-  background: #f3e7dc;
-  padding: 1.5rem;
-  border-radius: 12px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  margin-bottom: 2rem;
-  text-align: center;
-}
-
-.freebie-title {
-  font-family: 'Patrick Hand', sans-serif !important;
-  font-size: 2rem;
-  color: #3e2f24;
-}
-
-.freebie-description {
-  font-size: 1rem;
-  color: #5c4c44;
-  margin-bottom: 1.2rem;
-}
-
-.download-btn {
-  display: inline-block;
-  background: #a7b59f;
-  color: #fff;
-  padding: 0.9rem 2rem;
-  border-radius: 30px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: 0.3s ease;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.download-btn:hover {
-  background: #8ea28a;
   transform: translateY(-4px);
 }
 
@@ -483,43 +274,11 @@ button:hover,
   border-radius: 8px;
 }
 
-.cart-info h4 { margin: 0; }
-
 .remove-btn {
-  margin-left: auto;
   background-color: #d6bfa9;
   padding: 0.5rem 1rem;
   border-radius: 8px;
-}
-
-#cart-count {
-  background: #a7b59f;
-  padding: 2px 8px;
-  border-radius: 10px;
-  color: white;
-  margin-left: 4px;
-}
-
-/* ---------------------------------------------------
-   CONTACT PAGE
---------------------------------------------------- */
-.contact-form {
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
-}
-
-.contact-form input,
-.contact-form textarea {
-  padding: 0.8rem;
-  border: 1px solid #d6bfa9;
-  border-radius: 6px;
-  font-family: inherit;
-}
-
-.contact-form input:focus,
-.contact-form textarea:focus {
-  outline: 2px solid #a7b59f;
+  margin-left: auto;
 }
 
 /* ---------------------------------------------------
@@ -529,227 +288,24 @@ footer {
   background-color: rgba(214,191,167,0.9);
   padding: 1rem;
   text-align: center;
-  color: #3e2f24;
   font-size: 0.9rem;
+  color: #3e2f24;
 }
 
 /* ---------------------------------------------------
-   RESPONSIVE
+   RESPONSIVE FIXES
 --------------------------------------------------- */
 @media (max-width: 768px) {
   main.content { margin: 1rem; padding: 1.5rem; }
   .product-card, .product-box { width: 100%; }
   .logo { font-size: 2.4rem; }
-  .about-photo { width: 160px; height: 160px; margin-top: -60px; }
-  .includes-list { grid-template-columns: 1fr; }
-}
-/* ---------------------------------------------------
-   MOBILE DROPDOWN FIX
---------------------------------------------------- */
-@media (max-width: 768px) {
 
-  /* make dropdown full width on phones */
   .dropdown-content {
     position: relative;
     width: 100%;
     left: 0;
     min-width: unset;
     box-shadow: none;
-    background-color: #f8f4ef;
-    border-radius: 0;
     padding: 0.5rem 1rem;
-    z-index: 9999;
   }
-
-  /* dropdown links look clean */
-  .dropdown-content li a {
-    padding: 10px 6px;
-    display: block;
-    width: 100%;
-  }
-
-  /* parent container must not clip */
-  nav.sticky {
-    overflow: visible;
-  }
-
-  /* prevent cart text leaking behind dropdown */
-  .nav-links {
-    position: relative;
-    z-index: 5;
-  }
-}
-/* ---------------------------------------------------
-   COMING SOON BANNER
---------------------------------------------------- */
-.coming-soon-banner {
-  background: rgba(243, 231, 220, 0.9);
-  border-left: 6px solid #a7b59f;
-  padding: 1.5rem 1.8rem;
-  margin: 2rem 0;
-  border-radius: 12px;
-  text-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
-  animation: fadeIn 0.8s ease-in-out;
-}
-
-.coming-soon-banner h2 {
-  margin: 0;
-  font-family: 'Patrick Hand', sans-serif !important;
-  font-size: 1.8rem;
-  color: #5b4636;
-}
-
-.coming-soon-banner p {
-  margin-top: 0.6rem;
-  font-size: 1rem;
-  color: #6f5a4a;
-}
-
-@keyframes fadeIn {
-  from { opacity: 0; transform: translateY(10px); }
-  to   { opacity: 1; transform: translateY(0); }
-}
-/* ---------------------------------------------------
-   LANGUAGE SELECTION PAGE
---------------------------------------------------- */
-
-.language-wrapper {
-  max-width: 600px;
-  margin: 3rem auto;
-  background-color: rgba(255,255,255,0.88);
-  border-radius: 15px;
-  padding: 2rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-  text-align: center;
-  animation: fadeIn 0.6s ease;
-}
-
-.language-wrapper h1 {
-  margin-top: 0;
-  font-size: 2.2rem;
-  color: #3e2f24;
-}
-
-.lang-buttons {
-  margin-top: 1.8rem;
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.lang-btn {
-  background: #a7b59f;
-  padding: 0.8rem 1.6rem;
-  border-radius: 10px;
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  transition: 0.3s ease;
-  font-size: 1.2rem;
-}
-
-.lang-btn:hover {
-  background: #8ea28a;
-  transform: translateY(-3px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
-}
-.theme-preview-section {
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-
-.preview-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.theme-heading {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1rem;
-  text-align: center;
-  margin-top: 2rem;
-}
-
-.theme-icon-large {
-  width: 60px;
-  height: auto;
-  display: inline-block;
-}
-.theme-description {
-  text-align: center;
-  max-width: 900px;
-  margin: 1rem auto 3rem auto;
-  line-height: 1.6;
-}
-.theme-preview-section {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0;
-}
-.preview-item {
-  width: 130px;       /* slightly bigger */
-  height: 160px;      /* taller so full preview fits */
-  overflow: hidden;
-  border-radius: 12px;
-  background: #fff;
-  padding: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.15);
-  transition: transform 0.25s ease;
-  cursor: pointer;
-}
-
-.preview-item:hover {
-  transform: scale(1.15);
-  z-index: 10;
-}
-
-.preview-item img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;   /* << THIS prevents cropping */
-  border-radius: 10px;
-}
-.checkout-btn {
-  background-color: #b57f5f;
-  color: white;
-  padding: 14px 22px;
-  border: none;
-  border-radius: 10px;
-  cursor: pointer;
-  font-size: 1.2rem;
-  font-family: 'Quicksand', sans-serif;
-  transition: 0.2s;
-}
-
-.checkout-btn:hover {
-  background-color: #8a6045;
-}
-.payfast-btn {
-    background-color: #f4efe7;
-    border: 2px solid #7a786f;
-    border-radius: 50px;
-    padding: 12px 28px;
-    font-size: 18px;
-    font-family: 'Quicksand', sans-serif;
-    color: #555;
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    display: inline-block;
-    margin-top: 10px;
-}
-
-.payfast-btn:hover {
-    background-color: #e6dfd2;
-    border-color: #5e5c55;
-}
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Patrick Hand', cursive;
 }
