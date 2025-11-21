@@ -23,7 +23,6 @@
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
-
       <li class="dropdown">
         <a href="resources.html">Resources ▾</a>
         <ul class="dropdown-content">
@@ -32,7 +31,6 @@
           <li><a href="freebies.html">Freebies</a></li>
         </ul>
       </li>
-
       <li class="dropdown">
         <a href="#">Legal ▾</a>
         <ul class="dropdown-content">
@@ -42,7 +40,6 @@
           <li><a href="downloads.html">Digital Delivery</a></li>
         </ul>
       </li>
-
       <li><a href="contact.html">Contact</a></li>
       <li><a class="active" href="cart.html">Cart (<span id="cart-count">0</span>)</a></li>
     </ul>
@@ -62,26 +59,35 @@
 
   <h3 style="text-align:center;">Total: <span id="cart-total">R0</span></h3>
 
+  <!-- EMAIL INPUT FOR DELIVERY -->
+  <div style="text-align:center; margin-top:20px;">
+    <label for="customerEmail"><strong>Your Email for Download Delivery:</strong></label><br>
+    <input type="email" id="customerEmail" placeholder="your@email.com"
+           style="padding:8px; width:300px; margin-top:10px;" required>
+  </div>
+
   <!-- ========== PAYFAST CHECKOUT FORM ========== -->
-  <form id="payfast-form" action="https://www.payfast.co.za/eng/process" method="post" style="text-align:center; margin-top:20px;">
+  <form id="payfast-form" action="https://www.payfast.co.za/eng/process" method="post"
+        style="text-align:center; margin-top:20px;" onsubmit="return prepareCheckout();">
 
     <!-- REQUIRED FIELDS -->
     <input type="hidden" name="merchant_id" value="32490751">
     <input type="hidden" name="merchant_key" value="f4fwd1jmilk9g">
 
-    <!-- CORRECTED REDIRECTS TO YOUR REAL DOMAIN -->
-    <input type="hidden" name="return_url" value="https://bohoblackboard.netlify.app/success.html">
+    <!-- REDIRECT URL (INCLUDES CART + EMAIL) -->
+    <input type="hidden" id="pf-return" name="return_url" value="">
     <input type="hidden" name="cancel_url" value="https://bohoblackboard.netlify.app/cancel.html">
 
-    <!-- DYNAMIC FIELDS FILLED BY CART.JS -->
+    <!-- DYNAMIC FIELDS SET BY SCRIPT -->
     <input type="hidden" id="pf-amount" name="amount" value="">
     <input type="hidden" id="pf-item-name" name="item_name" value="">
+    <input type="hidden" id="pf-cart-json" name="custom_str1" value=""> <!-- CART ITEMS -->
+    <input type="hidden" id="pf-email" name="custom_str2" value=""> <!-- CUSTOMER EMAIL -->
 
     <!-- PAY BUTTON -->
     <button type="submit" id="payfast-button" class="checkout-btn">
       Pay with PayFast
     </button>
-
   </form>
 </main>
 
@@ -99,16 +105,39 @@ function toggleMenu() {
 }
 </script>
 
-<!-- 🔥 LOAD CART.JS AT THE BOTTOM -->
+<!-- CART.JS -->
 <script src="cart.js"></script>
 
-<!-- 🔥 RUN UPDATE AFTER PAGE LOADS -->
+<!-- RUN CART UPDATES -->
 <script>
   document.addEventListener("DOMContentLoaded", () => {
     updateCartPage();
     updateCartCount();
     updatePayFastFields();
   });
+
+  // PREPARE ALL DATA BEFORE PAYFAST CHECKOUT
+  function prepareCheckout() {
+    const email = document.getElementById("customerEmail").value;
+    if (!email) {
+      alert("Please enter your email address before paying.");
+      return false;
+    }
+
+    // LOAD CART FROM LOCAL STORAGE
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+
+    // SAVE EMAIL + CART AS HIDDEN STRINGS
+    document.getElementById("pf-email").value = email;
+    document.getElementById("pf-cart-json").value = JSON.stringify(cart);
+
+    // SET RETURN URL WITH VARIABLES
+    document.getElementById("pf-return").value =
+      "https://bohoblackboard.netlify.app/success.html" +
+      "?email=" + encodeURIComponent(email);
+
+    return true;
+  }
 </script>
 
 </body>
