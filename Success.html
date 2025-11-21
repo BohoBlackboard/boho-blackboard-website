@@ -38,44 +38,29 @@
 <script>
 emailjs.init("_RstzO3AfSZ0UV3y7"); // YOUR PUBLIC KEY
 
-// Read PayFast parameters
 const urlParams = new URLSearchParams(window.location.search);
 const customerEmail = urlParams.get("email");
+const cartData = urlParams.get("custom_str1");
 
-// PayFast sends custom fields via POST → but Netlify converts them to GET
-const cartData = urlParams.get("custom_str1"); 
-
-// Convert cart JSON back into JS array
 let cart = [];
 try {
   if (cartData) cart = JSON.parse(cartData);
-} catch (error) {
-  console.error("Cart parse error:", error);
-}
+} catch {}
 
-console.log("EMAIL:", customerEmail);
-console.log("CART:", cart);
-
-// Download links for each product
 const downloadLinks = {
-  "Boho-Dachshunds": "https://bohoblackboard.netlify.app/downloads/dachshunds.zip",
-  "Boho-Bears": "https://bohoblackboard.netlify.app/downloads/bears.zip",
-  "Boho-Bunnies": "https://bohoblackboard.netlify.app/downloads/bunnies.zip",
-  "Boho-Owls": "https://bohoblackboard.netlify.app/downloads/owls.zip",
-  "Boho-Ringnecks": "https://bohoblackboard.netlify.app/downloads/ringnecks.zip",
-  "Boho-Squirrels": "https://bohoblackboard.netlify.app/downloads/squirrels.zip"
+  "Boho-Dachshunds": "https://bohoblackboard.github.io/boho/downloads/boho-dachshunds.zip",
+  "Boho-Dachshunds-Afrikaans": "https://bohoblackboard.github.io/boho/downloads/boho-dachshunds-afrikaans.zip",
+  "Boho-Owls": "https://bohoblackboard.github.io/boho/downloads/boho-owls.zip",
+  "Boho-Owls-Afrikaans": "https://bohoblackboard.github.io/boho/downloads/boho-owls-afrikaans.zip"
 };
 
-// Build email message containing ALL purchased items
 let messageLinks = "";
-
 cart.forEach(item => {
   if (downloadLinks[item.name]) {
     messageLinks += `${item.name}: ${downloadLinks[item.name]}\n`;
   }
 });
 
-// Send email
 if (customerEmail && messageLinks) {
   emailjs.send("service_96euu0a", "template_wxt1tto", {
     customer_email: customerEmail,
@@ -83,11 +68,10 @@ if (customerEmail && messageLinks) {
     download_link: messageLinks
   })
   .then(() => {
-    document.getElementById("status").innerText = 
+    document.getElementById("status").innerText =
       "Your download email has been sent successfully! ❤️";
   })
-  .catch(err => {
-    console.error("Email error:", err);
+  .catch(() => {
     document.getElementById("status").innerText =
       "We could not send your email. Please contact support.";
   });
