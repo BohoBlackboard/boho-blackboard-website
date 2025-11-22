@@ -1,6 +1,6 @@
-// ==============================
-//  CART STORAGE
-// ==============================
+// =====================================================
+// CART STORAGE
+// =====================================================
 function getCart() {
   return JSON.parse(localStorage.getItem("cart") || "[]");
 }
@@ -9,15 +9,30 @@ function saveCart(cart) {
   localStorage.setItem("cart", JSON.stringify(cart));
 }
 
-// ==============================
-//  ADD / REMOVE ITEMS
-// ==============================
-function addToCart(name, price, image = "") {
+function setCustomerEmail(email) {
+  localStorage.setItem("customer_email", email);
+}
+
+function getCustomerEmail() {
+  return localStorage.getItem("customer_email") || "";
+}
+
+// =====================================================
+// ADD / REMOVE ITEMS
+// =====================================================
+const unavailableCodes = ["BEAR_EN", "BEAR_AF", "BUN_EN", "BUN_AF", "SQR_EN", "SQR_AF", "RNG_EN", "RNG_AF"];
+
+function addToCart(name, price, image = "", code) {
+  if (unavailableCodes.includes(code)) {
+    alert(`${name} is not available yet and cannot be purchased.`);
+    return;
+  }
+
   const cart = getCart();
-  cart.push({ name, price: Number(price), image });
+  cart.push({ name, price: Number(price), image, code });
   saveCart(cart);
   updateCartCount();
-  alert(`${name} added to cart!`);
+  alert(`${name} added to your cart!`);
 }
 
 function removeFromCart(index) {
@@ -28,22 +43,21 @@ function removeFromCart(index) {
   updateCartCount();
 }
 
-// ==============================
-//  CART COUNTER
-// ==============================
+// =====================================================
+// CART COUNT
+// =====================================================
 function updateCartCount() {
   const cart = getCart();
   const el = document.getElementById("cart-count");
   if (el) el.textContent = cart.length;
 }
 
-// ==============================
-//  CART PAGE RENDER
-// ==============================
+// =====================================================
+// CART PAGE RENDERING
+// =====================================================
 function updateCartPage() {
   const container = document.getElementById("cart-items");
   const totalEl = document.getElementById("cart-total");
-
   if (!container) return;
 
   const cart = getCart();
@@ -51,56 +65,64 @@ function updateCartPage() {
   let total = 0;
 
   cart.forEach((item, index) => {
-    total += Number(item.price);
+    total += item.price;
 
-    const div = document.createElement("div");
-    div.classList.add("cart-item");
-
-    div.innerHTML = `
-      <img src="${item.image}" class="cart-thumb">
-      <div class="cart-info">
-        <h4>${item.name}</h4>
-        <p>R${item.price}</p>
+    container.innerHTML += `
+      <div class="cart-item">
+        <img src="${item.image}" class="cart-thumb">
+        <div class="cart-info">
+          <h4>${item.name}</h4>
+          <p>R${item.price}</p>
+        </div>
+        <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
       </div>
-      <button class="remove-btn" onclick="removeFromCart(${index})">Remove</button>
     `;
-
-    container.appendChild(div);
   });
 
-  totalEl.textContent = "R" + total;
+  if (totalEl) totalEl.textContent = "R" + total;
 }
 
-// ==============================
-//  PAYFAST FIELD SYNC
-// ==============================
+// =====================================================
+// BLOCK CHECKOUT FOR UNAVAILABLE THEMES
+// =====================================================
+function cartContainsUnavailable() {
+  const cart = getCart();
+  return cart.some(item => unavailableCodes.includes(item.code));
+}
+
+// =====================================================
+// PAYFAST PREPARATION
+// =====================================================
 function prepareCheckout() {
   const email = document.getElementById("customerEmail").value;
 
   if (!email) {
-    alert("Please enter your email address before paying.");
+    alert("Please enter your email address.");
     return false;
   }
 
-  const cart = getCart();
-  const total = cart.reduce((sum, item) => sum + item.price, 0);
+  // block unavailable themes
+  if (cartContainsUnavailable()) {
+    alert("Your cart contains themes that are not yet available. Please remove them to continue.");
+    return false;
+  }
 
-  document.getElementById("pf-email").value = email;
-  document.getElementById("pf-cart-json").value = JSON.stringify(cart);
+  setCustomerEmail(email);
+
+  const cart = getCart();
+  const total = cart.reduce((sum, i) => sum + i.price, 0);
+
   document.getElementById("pf-amount").value = total.toFixed(2);
 
-  document.getElementById("pf-return").value =
-    "https://bohoblackboard.github.io/boho/success.html" +
-    "?email=" + encodeURIComponent(email) +
-    "&custom_str1=" + encodeURIComponent(JSON.stringify(cart));
+  let names = cart.map(i => i.name).join(", ");
+  if (names.length > 100) names = names.substring(0, 97) + "...";
+  document.getElementById("pf-item-name").value = names;
 
   return true;
 }
 
-// ==============================
-//  INITIAL LOAD
-// ==============================
+// =====================================================
 document.addEventListener("DOMContentLoaded", () => {
-  updateCartPage();
   updateCartCount();
+  updateCartPage();
 });

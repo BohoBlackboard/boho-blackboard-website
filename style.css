@@ -309,3 +309,21 @@ footer {
     padding: 0.5rem 1rem;
   }
 }
+/* Fix giant preview images */
+.theme-preview-section img,
+.theme-preview img {
+  width: 100%;
+  max-width: 400px;      /* adjustable */
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Keep preview grid aligned nicely */
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  padding: 20px;
+}
