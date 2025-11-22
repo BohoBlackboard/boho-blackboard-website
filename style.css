@@ -1,5 +1,5 @@
 /* ---------------------------------------------------
-   GLOBAL STYLES
+   GLOBAL
 --------------------------------------------------- */
 body {
   margin: 0;
@@ -7,9 +7,17 @@ body {
   background: url('Boho.jpg') center/cover fixed no-repeat;
   color: #4b3d36;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* ALL HEADINGS USE PATRICK HAND */
+/* All images default safely */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* All headings */
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Patrick Hand', cursive !important;
   color: #3e2f24;
@@ -21,8 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 header {
   text-align: center;
   background-color: rgba(214,191,167,0.9);
-  color: #3e2f24;
-  padding: 2rem 1rem 1rem;
+  padding: 2rem 1rem 1.2rem;
 }
 
 .logo {
@@ -37,64 +44,42 @@ header {
   background-color: #a7b59f;
   border-radius: 50%;
   margin: 0.6rem auto 0.8rem;
-  animation: swooshFade 0.6s ease-in;
-}
-
-@keyframes swooshFade {
-  from {opacity: 0; transform: scaleX(0.5);}
-  to   {opacity: 1; transform: scaleX(1);}
 }
 
 /* ---------------------------------------------------
-   NAVIGATION
+   NAVBAR
 --------------------------------------------------- */
 nav.sticky {
   position: sticky;
   top: 0;
-  background-color: #f2e7de;
+  background: #f2e7de;
   padding: 10px 0;
-  z-index: 10;
+  z-index: 20;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
-  flex-wrap: wrap;
 }
 
 .nav-links a {
   text-decoration: none;
   color: #5e4a3d;
-  font-weight: 500;
   padding: 6px 12px;
   border-radius: 6px;
   transition: 0.3s;
-  position: relative;
+  font-weight: 500;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-  background-color: #d6bfa9;
-  color: #fff;
-}
-
-.nav-links a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0%;
-  height: 2px;
-  background-color: #a7b59f;
-  transition: width 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+  background: #d6bfa9;
+  color: white;
 }
 
 .dropdown { position: relative; }
@@ -102,119 +87,114 @@ nav.sticky {
 .dropdown-content {
   display: none;
   position: absolute;
-  background-color: #f8f4ef;
+  background: #fffdf9;
+  border-radius: 8px;
   min-width: 160px;
-  border-radius: 6px;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-}
-
-.dropdown-content li a {
-  display: block;
-  padding: 8px 12px;
-  color: #4a3f35;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.12);
+  z-index: 50;
 }
 
 .dropdown:hover .dropdown-content {
   display: block;
 }
 
+.dropdown-content li a {
+  display: block;
+  padding: 10px;
+  color: #3f3226;
+}
+
 /* ---------------------------------------------------
    BANNERS
 --------------------------------------------------- */
-.hero-banner img,
-.page-banner.short img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-.page-banner.short {
-  height: 180px;
-  overflow: hidden;
-}
-
-.page-banner.short img {
-  object-fit: cover;
-  animation: bannerFade 1.2s ease-in-out;
-}
-
-@keyframes bannerFade {
-  from {opacity: 0;}
-  to   {opacity: 1;}
-}
-
 .sub-banner img {
-  width: 100%;
   max-height: 120px;
   object-fit: contain;
-  display: block;
-  margin: 0 auto;
+  width: 100%;
 }
 
 /* ---------------------------------------------------
    MAIN CONTENT
 --------------------------------------------------- */
 main.content {
-  max-width: 750px;
+  max-width: 850px;
   margin: 2rem auto;
-  background-color: rgba(255,255,255,0.88);
-  border-radius: 15px;
+  background: rgba(255,255,255,0.88);
   padding: 2rem;
+  border-radius: 16px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
 }
 
 .intro {
-  font-size: 1.1rem;
-  color: #5c4c44;
-  margin-bottom: 2rem;
+  text-align: center;
+  color: #5b4a41;
 }
 
 /* ---------------------------------------------------
-   PRODUCT GRIDS
+   ABOUT PAGE FIXES
 --------------------------------------------------- */
-.product-grid,
-.product-sections {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1.5rem;
+.about-photo {
+  width: 260px;
+  height: 260px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin: -70px auto 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-.product-card,
-.product-box {
-  background-color: #f3e7dc;
-  border-radius: 10px;
-  padding-bottom: 1rem;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
-  transition: 0.3s ease;
-}
-
-.product-card:hover,
-.product-box:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.12);
-}
-
-.product-box {
-  width: 300px;
-}
-
-.product-card {
-  width: 280px;
-}
-
-.product-card .strip,
-.product-box .strip {
-  background-color: #a7b59f;
-  height: 20px;
+.about-photo img {
+  object-fit: cover;
   width: 100%;
+  height: 100%;
 }
 
-.product-card h4,
-.product-box h4 {
-  font-size: 1.4rem;
-  margin: 1rem 0;
-  text-align: center;
+/* ---------------------------------------------------
+   CLASSROOM THEMES PAGE FIXES
+--------------------------------------------------- */
+.theme-item img {
+  max-width: 180px;
+  margin: 0 auto 10px;
+}
+
+/* ---------------------------------------------------
+   THEME PREVIEW PAGES
+--------------------------------------------------- */
+
+.theme-preview-section {
+  max-width: 900px;
+  margin: 2rem auto;
+}
+
+.preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 20px;
+}
+
+.preview-item {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+}
+
+.preview-item img {
+  width: 100%;
+  max-width: 200px;
+  margin: auto;
+}
+
+/* theme icon */
+.theme-icon-large {
+  width: 80px;
+  height: auto;
+}
+
+.theme-heading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
 }
 
 /* ---------------------------------------------------
@@ -222,36 +202,20 @@ main.content {
 --------------------------------------------------- */
 button,
 .checkout-btn {
-  background-color: #a7b59f;
+  background: #a7b59f;
+  border: none;
   color: white;
   padding: 0.7rem 1.4rem;
-  border: none;
-  border-radius: 8px;
-  font-weight: 500;
+  border-radius: 10px;
   cursor: pointer;
-  transition: 0.3s ease;
+  font-weight: 600;
+  transition: 0.3s;
 }
 
 button:hover,
 .checkout-btn:hover {
+  background: #8ea28a;
   transform: translateY(-3px);
-  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-}
-
-.add-to-cart {
-  background-color: #a7b59f;
-  padding: 0.9rem 2rem;
-  border-radius: 30px;
-  color: white;
-  display: block;
-  margin: 1.5rem auto 0;
-  cursor: pointer;
-  transition: 0.3s ease;
-}
-
-.add-to-cart:hover {
-  background-color: #8ea28a;
-  transform: translateY(-4px);
 }
 
 /* ---------------------------------------------------
@@ -264,66 +228,49 @@ button:hover,
   background: #f3e7dc;
   padding: 1rem;
   border-radius: 10px;
-  margin-bottom: 1rem;
 }
 
 .cart-thumb {
   width: 70px;
   height: 70px;
   object-fit: contain;
-  border-radius: 8px;
 }
 
 .remove-btn {
-  background-color: #d6bfa9;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
+  background: #c6a992;
   margin-left: auto;
+  padding: 8px 12px;
+  border-radius: 8px;
 }
 
 /* ---------------------------------------------------
    FOOTER
 --------------------------------------------------- */
 footer {
-  background-color: rgba(214,191,167,0.9);
+  background: rgba(214,191,167,0.9);
   padding: 1rem;
   text-align: center;
-  font-size: 0.9rem;
   color: #3e2f24;
+  font-size: 0.9rem;
 }
 
 /* ---------------------------------------------------
-   RESPONSIVE FIXES
+   MOBILE FIXES
 --------------------------------------------------- */
 @media (max-width: 768px) {
-  main.content { margin: 1rem; padding: 1.5rem; }
-  .product-card, .product-box { width: 100%; }
-  .logo { font-size: 2.4rem; }
-
-  .dropdown-content {
-    position: relative;
-    width: 100%;
-    left: 0;
-    min-width: unset;
-    box-shadow: none;
-    padding: 0.5rem 1rem;
+  main.content {
+    margin: 1rem;
+    padding: 1.5rem;
   }
-}
-/* Fix giant preview images */
-.theme-preview-section img,
-.theme-preview img {
-  width: 100%;
-  max-width: 400px;      /* adjustable */
-  height: auto;
-  object-fit: contain;
-  display: block;
-  margin: 0 auto;
-}
 
-/* Keep preview grid aligned nicely */
-.preview-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
-  padding: 20px;
+  .logo { font-size: 2.3rem; }
+
+  .about-photo {
+    width: 180px;
+    height: 180px;
+  }
+
+  .preview-grid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  }
 }
